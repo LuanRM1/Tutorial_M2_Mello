@@ -6,6 +6,7 @@ const port = 3000;
 const sqlite3 = require('sqlite3').verbose();
 const DBPATH = 'db1_curriculo.db';
 var bodyParser = require('body-parser');
+const urlencodedParser = bodyParser.urlencoded({ extended: true })
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use(bodyParser.json());
 var db = new sqlite3.Database(DBPATH);
@@ -22,9 +23,8 @@ app.get('/formacao', (req, res) => {
         }
         console.log(rows)
         res.send(rows);
-        db.close();
     });
-    
+    //db.close();
 });
 
 app.post("/criar", (req, res) => {
@@ -41,13 +41,13 @@ app.post("/criar", (req, res) => {
         }
         console.log("Registro criado com sucesso!");
         res.send("Registro criado com sucesso!");
-        db.close();
     });
+    //db.close();
 });
 
 app.get('/atualiza', (req, res) => {
     res.statusCode = 200;
-    var id = parseInt(req.body.Id);
+    var id = parseInt(req.query.Id);
     res.setHeader('Access-Control-Allow-Origin', '*');
     var sql = "SELECT * FROM Pessoa WHERE Nome="+id;
     db.all(sql, [], (err, rows) => {
@@ -56,11 +56,11 @@ app.get('/atualiza', (req, res) => {
         }
         console.log(rows)
         res.json(rows);
-        db.close();
     });
+    //db.close();
 });
 
-app.post("/atualiza",bodyParser.urlencoded, (req, res) => {
+app.put("/atualiza",urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
     var nome = req.body.Nome;
@@ -71,10 +71,11 @@ app.post("/atualiza",bodyParser.urlencoded, (req, res) => {
             throw err;
         }
         res.end()
-        console.log("Registro atualizado com sucesso!");
+        console.log("Registro atualizado com sucesso!",rows);
         res.send("Registro atualizado com sucesso!");
-        db.close();
+        res.end()
     });
+    //db.close();
 });
 
 
@@ -89,8 +90,8 @@ app.get('/deleta', (req, res) => {
         }
         console.log(rows)
         res.json(rows);
-        db.close();
     });
+    //db.close();
 });
 
 
