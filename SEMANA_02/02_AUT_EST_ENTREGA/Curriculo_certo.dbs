@@ -39,5 +39,6 @@
 		<entity schema="Default" name="Experiencias" color="C1D8EE" x="208" y="48" />
 		<entity schema="Default" name="Formação" color="C1D8EE" x="48" y="48" />
 		<entity schema="Default" name="Pessoa" color="C1D8EE" x="240" y="240" />
+		<script name="Curriculo_certo.sql" id="Editor-13d9" language="SQL" file="file:/C:/Tutorial_M2_Mello/SEMANA_02/02_AUT_EST_ENTREGA/Curriculo_certo.sql" />
 	</layout>
 </project>

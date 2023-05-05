@@ -12,7 +12,7 @@ CREATE TABLE Competencias (
 
 CREATE TABLE Experiencias ( 
 	Local                TEXT     ,
-	id                   INTEGER NOT NULL    ,
+	id                   TEXT NOT NULL    ,
 	FOREIGN KEY ( id ) REFERENCES Pessoa( Id )  
  );
 
