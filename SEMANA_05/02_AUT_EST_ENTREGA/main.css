@@ -1,0 +1,63 @@
+#img1 {
+    width: 15%;
+    height: 15%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+  }
+  
+  body {
+    background-color: #140748;  
+  }
+  
+  .sidebar {
+    background-color: #1e1d2f;  
+    color: white;
+    display: flex;   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+  }
+  
+  .main-content {   
+    background-color: rgb(104, 104, 104);   
+    display: flex;    
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: center;
+  }
+  
+  .links a {
+    color: #ffffff; 
+  }  
+  
+  .links a:hover {
+   color: #4f154b;  
+  }
+  
+  h1, h2, h3 {
+    color: #ffffff;    
+  }   
+  
+  p {
+    color: #ffffff;
+  }
+
+
+
+
+/* Breakpoint para desktops e laptops */
+@media(min-width: 992px) {
+
+}
+
+/* Breakpoint para tablets */ 
+@media(min-width: 768px) and (max-width: 991px) { 
+
+}
+
+/* Breakpoint para celulares */
+@media(max-width: 767px) {
+
+}
