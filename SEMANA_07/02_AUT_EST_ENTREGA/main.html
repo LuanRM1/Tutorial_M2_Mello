@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Ha</title>
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+        $("#name").keyup(function(){
+            var name = $("#name").val();
+            $.post("app.js",{
+                name:name
+            },function(data,status){
+                $("#message").html(data);
+            });
+        });
+    });
+</script>
+   <form method="post" action="http://127.0.0.1:3000/criar" >
+    <input type="text" name="name" id="name" placeholder="Nome">
+    <input type="text" name="id" id = "id" placeholder="id">
+    <button type="submit">Enviar</button>
+   </form>
+
+</body>
+</html>
